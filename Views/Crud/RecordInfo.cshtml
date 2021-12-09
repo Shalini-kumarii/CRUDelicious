@@ -1,0 +1,28 @@
+@model CRUDelicious.Models.Crud;
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <title>Hello!</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+</head>
+
+<body>
+    <a href="/home">Home</a>
+    <h1> Submitted Info</h1>
+    <p> Name: @Model.Name</p>
+    <p> Chef : @Model.Chef</p>
+    <p> Tastiness: @Model.Tastiness</p>
+    <p> Calories: @Model.Calories</p>
+
+    @* <p> Comment : @Model.Comment</p> *@
+    @if(Model.Description != null)
+    {
+        <p><strong>Comment: </strong>@Model.Description</p>
+    }
+    <a href="/crud/delete/@Model.DishId">Delete</a>
+    <a href="/crud/edit/@Model.DishId">Edit</a>
+</body>
+</html>
